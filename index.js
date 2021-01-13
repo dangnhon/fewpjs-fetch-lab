@@ -1,5 +1,11 @@
 function fetchBooks() {
-
+  return fetch('https://anapioficeandfire.com/api/books')
+  // first .then returns json data 
+    .then(resp => resp.json())
+  // second .then uses the returned data and can be represented as anything (such as books_array) you'd like. 
+  // You can use that in our code.
+    .then(books_array => renderBooks(books_array))
+    
 }
 
 function renderBooks(books) {
